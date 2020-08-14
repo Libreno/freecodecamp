@@ -1,0 +1,19 @@
+function addTogether(x, y) {
+  if (x === undefined || typeof x != "number"){
+    return undefined;
+  }
+
+  if (y === undefined){
+    return function(a){
+      return addTogether(x, a);
+    }
+  }
+
+  if (typeof y != "number"){
+    return undefined;
+  }
+
+  return x + y;
+}
+
+addTogether(2)(3);

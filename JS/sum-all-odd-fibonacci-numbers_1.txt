@@ -1,0 +1,20 @@
+function sumFibs(num) {
+  let res = [1];
+  let sum = 1;
+  let f1 = 1, f2 = 1;
+  let fi = f2;
+  while (fi <= num){
+    res.push(fi);
+    if ((fi % 2) == 1){
+      sum += fi;
+    };
+    fi += f1;
+    f1 = f2;
+    f2 = fi;
+  }
+  console.log(res);
+  console.log("");
+  console.log(sum);
+  return sum;
+}
+sumFibs(75025);

@@ -1,0 +1,22 @@
+function sumFibs(num) {
+  let getFibArr = function(num){
+    let getFibArrInner = function(f1, f2){
+        let f3 = f1 + f2;
+        console.log("f3 "+ f3 + " num " + num)
+        if (f3 > num){
+          return [];
+        };
+        return [f3, ...getFibArrInner(f2, f3)];
+    };
+
+    return [1, ...getFibArrInner(0, 1)]
+  };
+  let arr = getFibArr(num);
+  console.log(arr);
+  let arrF = arr.filter(n => n % 2 == 1);
+  //console.log(arrF);
+  let sum = arrF.reduce((sum, val) => sum + val, 0);
+  console.log("sum " + sum);
+  return sum;
+}
+sumFibs(1);

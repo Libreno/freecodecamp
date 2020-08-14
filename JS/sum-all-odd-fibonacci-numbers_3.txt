@@ -1,0 +1,11 @@
+function sumFibs(num) {
+  let getFibArr = function(f1, f2, num){
+    let f3 = f1 + f2;
+    return [f2, ...(f3 <= num)? getFibArr(f2, f3, num) : []];
+  };
+
+  return getFibArr(0, 1, num)
+	.filter(n => n % 2 == 1)
+	.reduce((sum, val) => sum + val, 0);
+}
+sumFibs(1000);

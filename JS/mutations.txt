@@ -1,0 +1,13 @@
+function mutation(arr) {
+  let letters = arr[1].split('');
+  let word = arr[0].split('');
+  return letters.reduce((acc, v) => {
+    console.log(word.indexOf(v));
+    if (word.indexOf(v.toLowerCase()) == -1 && word.indexOf(v.toUpperCase()) == -1){
+      return false;
+    };
+    return acc;
+    }, true);
+}
+
+mutation(["hello", "hey"]);
